@@ -1,0 +1,40 @@
+// Custom shadows
+.shadow-sm { box-shadow: $box-shadow-sm !important; }
+.shadow { box-shadow: $box-shadow !important; }
+.shadow-lg { box-shadow: $box-shadow-lg !important; }
+
+// Custom rounded
+.rounded { border-radius: $border-radius !important; }
+.rounded-lg { border-radius: $border-radius-lg !important; }
+.rounded-sm { border-radius: $border-radius-sm !important; }
+
+// Custom transitions
+.transition {
+  transition: all 0.2s ease;
+}
+
+// Hover effects
+.hover-scale {
+  transition: transform 0.2s ease;
+  
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.hover-shadow {
+  transition: box-shadow 0.2s ease;
+  
+  &:hover {
+    box-shadow: $box-shadow-lg;
+  }
+}
+
+// Text utilities
+.text-underline-hover {
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}

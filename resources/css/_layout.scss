@@ -1,0 +1,41 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: $spacer * 2 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+  }
+  
+  .footer {
+    background-color: $light;
+    padding: $spacer * 2 0;
+    margin-top: $spacer * 3;
+    text-align: center;
+    color: $secondary;
+  }
+  
+  .sidebar {
+    @include media-breakpoint-up(lg) {
+      position: sticky;
+      top: $spacer * 2;
+    }
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .page-header {
+    margin-bottom: $spacer * 2;
+    padding-bottom: $spacer;
+    border-bottom: 1px solid $gray-200;
+  }

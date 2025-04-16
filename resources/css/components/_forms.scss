@@ -1,0 +1,54 @@
+.form-control {
+    border-radius: $border-radius;
+    padding: 0.5rem 1rem;
+    border: 1px solid $gray-300;
+    transition: all 0.2s ease;
+  
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 0.25rem rgba($primary, 0.25);
+    }
+  }
+  
+  .form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: $dark;
+  }
+  
+  .input-group {
+    .form-control {
+      &:focus {
+        z-index: 3;
+      }
+    }
+  
+    .btn {
+      z-index: 2;
+    }
+  }
+  
+  .form-check-input {
+    &:checked {
+      background-color: $primary;
+      border-color: $primary;
+    }
+  
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba($primary, 0.25);
+    }
+  }
+  
+  .invalid-feedback {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  
+  .was-validated .form-control:invalid,
+  .form-control.is-invalid {
+    border-color: $danger;
+  
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba($danger, 0.25);
+    }
+  }

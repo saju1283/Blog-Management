@@ -1,0 +1,32 @@
+.alert {
+    border-radius: $border-radius;
+    padding: $spacer;
+    border: none;
+    box-shadow: $box-shadow-sm;
+  
+    &.alert-dismissible {
+      .btn-close {
+        padding: $spacer;
+      }
+    }
+  
+    &.alert-success {
+      background-color: rgba($success, 0.1);
+      color: darken($success, 20%);
+    }
+  
+    &.alert-danger {
+      background-color: rgba($danger, 0.1);
+      color: darken($danger, 20%);
+    }
+  
+    &.alert-warning {
+      background-color: rgba($warning, 0.1);
+      color: darken($warning, 20%);
+    }
+  
+    &.alert-info {
+      background-color: rgba($info, 0.1);
+      color: darken($info, 20%);
+    }
+  }

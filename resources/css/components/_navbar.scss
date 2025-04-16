@@ -1,0 +1,57 @@
+.navbar {
+    padding: 1rem 0;
+    box-shadow: $box-shadow;
+    background-color: white;
+  
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: $primary;
+    }
+  
+    .nav-link {
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      color: $dark;
+  
+      &:hover {
+        color: $primary;
+      }
+  
+      &.active {
+        color: $primary;
+        font-weight: 600;
+      }
+    }
+  
+    .dropdown-menu {
+      border: none;
+      box-shadow: $box-shadow-lg;
+      border-radius: $border-radius;
+      padding: 0.5rem 0;
+    }
+  
+    .dropdown-item {
+      padding: 0.5rem 1.5rem;
+      color: $dark;
+  
+      &:hover {
+        background-color: rgba($primary, 0.1);
+        color: $primary;
+      }
+  
+      &.active {
+        background-color: $primary;
+        color: white;
+      }
+    }
+  }
+  
+  .navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+  
+    &:focus {
+      box-shadow: none;
+    }
+  }
