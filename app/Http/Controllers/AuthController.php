@@ -47,7 +47,12 @@ class AuthController extends Controller
             $data['profile_pic'] = $path;
         }
 
-        $user = User::create($data);
+        // Ensure username is included
+        $user = User::create([
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'password' => $data['password']
+        ]);
 
         Auth::login($user);
 

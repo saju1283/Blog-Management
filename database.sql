@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2025 at 07:50 PM
+-- Generation Time: Apr 16, 2025 at 08:31 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -166,6 +166,33 @@ CREATE TABLE `post_tag` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sessions`
+--
+
+CREATE TABLE `sessions` (
+  `id` varchar(255) NOT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `ip_address` varchar(45) DEFAULT NULL,
+  `user_agent` text DEFAULT NULL,
+  `payload` longtext NOT NULL,
+  `last_activity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sessions`
+--
+
+INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+('DiYamKE06KQblQ3s2TgqG4BCOnAFWaJztpHblHJJ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMXZudXMweDdIckUxWXY2TFlZWGpQZ3ZvSGdTbG5Wcm5LZlg3VlAxZyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1744222234),
+('IEQFQTpihOZ0kqHTvX1lhme9QeADWxW89QZQvD7r', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOVEyaDdXc2JudzFmbldUSHcwS2xSU0JhY09XWFZxZk9kOXY3cWhXcCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1744222823),
+('LCz0F5OjlSt5maAO5YMFGRkUqu7nrdxuXRdc5I0v', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSXdpNXRwMHlKUU42N2llamppOXJjb1ZFNU1iMXExUlRzMlJvZW02QSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1744222093),
+('PsaJWnAVyVtaJRbpEa140teKTNSFt1xXSZTE0oHH', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il9mbGFzaCI7YToyOntzOjM6Im5ldyI7YTowOnt9czozOiJvbGQiO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoiRFdnMFNudWl1QllqNU9IRnFQQmRnTEpyeDVRakROem80akptdllscSI7czo1OiJlbWFpbCI7czoxNzoic2FqdTEyNEBnbWFpbC5jb20iO3M6NzoidXNlcl9pZCI7aTo0O30=', 1744224916),
+('tcx56NfdQNjvckkqRb3NKdeGuqzzZyDkRlDUnoCE', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiR0xXMjlOcFpGVkRIRk05WGlDQnlDZ0FUeWlkZ1VRdEl1N2Ixb21TdiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1744222534),
+('z5Ssx8GaVhm3Gtajc3xxCPsIrZMUQm8Mek0co9VP', 11, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiWE1VcnBWZk81bWx0bHZ0R1VPU2VLZWw1UjBVUW53b3dFUW9rUnJnWiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9yZWdpc3RlciI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjExO30=', 1744828139);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tags`
 --
 
@@ -184,7 +211,7 @@ CREATE TABLE `tags` (
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL DEFAULT '0',
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `profile_pic` varchar(255) DEFAULT NULL,
@@ -197,16 +224,17 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `profile_pic`, `created_at`, `updated_at`) VALUES
-(1, 'saju', 'saju@gmail.com', '$2y$12$YcJDcM4uoVP4HWcJgnCIbujlqrqQWvaTzrCFfcvdI8tOkn1EZtcn.', NULL, '2025-04-16 11:47:32', '2025-04-16 11:47:32'),
-(2, 'ohackett', 'krystina15@example.net', '$2y$12$UYFr6rKRp53gLKOYskTvTO3W0XkBToRtAtiKdbBPKkNHZ7g07J7Vi', NULL, '2025-04-16 11:47:32', '2025-04-16 11:47:32'),
-(3, 'sonya86', 'sbauch@example.net', '$2y$12$FgRQvOjWo3HXGwqN4nLvJuReSdpAVGB2Hku2WRvKwDGBd9GGtDUUq', NULL, '2025-04-16 11:47:32', '2025-04-16 11:47:32'),
-(4, 'chelsey06', 'javonte.langosh@example.com', '$2y$12$qDg/WxNbbyLZtUf15Qx4O.9eS911EbDMiAUSfxAPEMgFt8Ii33ZPi', NULL, '2025-04-16 11:47:32', '2025-04-16 11:47:32'),
-(5, 'qbogan', 'lee69@example.net', '$2y$12$FqNYQqdjlX6RWydDrpplZOw86NeogJfVe6imKGZM8RdF6IYCsoxQ.', NULL, '2025-04-16 11:47:32', '2025-04-16 11:47:32'),
-(6, 'corrine.ondricka', 'isom06@example.net', '$2y$12$SMFMArpO.hTmYKwDnOIRV.Bd3st8U.rgOwiuiViIwj6IRJMT4g1Cq', NULL, '2025-04-16 11:47:32', '2025-04-16 11:47:32'),
-(7, 'langosh.jerald', 'kilback.colton@example.com', '$2y$12$.OmJu7sV7rg8PM9NPP0Hou2h9eaXroOjG0U5vVx01e8T647ozvDS6', NULL, '2025-04-16 11:47:32', '2025-04-16 11:47:32'),
-(8, 'idella29', 'nicolas.alexander@example.org', '$2y$12$xnvsXQpw5fEWa9p8AmL4L.TTWwTp5YF7sIy9EhdfmXeAmp6N3bOZm', NULL, '2025-04-16 11:47:32', '2025-04-16 11:47:32'),
-(9, 'beth.mohr', 'veum.liliane@example.org', '$2y$12$82VyZPq/N0cROohaMtbBTeCvm2MgipQhJEjCQ7kJ0B9v.kPCw7VEW', NULL, '2025-04-16 11:47:32', '2025-04-16 11:47:32'),
-(10, 'bnitzsche', 'tmacejkovic@example.net', '$2y$12$5QAALh94nQcDfwyZ5rlG5udt45RrEH0ZWNCEFk2O1fnb5fGW5E6SS', NULL, '2025-04-16 11:47:32', '2025-04-16 11:47:32');
+(1, 'fbalistreri', 'hermann.aglae@example.net', '$2y$12$rLpeyhF4nOLSFKM5T49XXeNPDKhi7bJKskJvivKyMpjrQlfkpBkBC', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
+(2, 'lebsack.trace', 'dawson19@example.net', '$2y$12$XHUOCMRbkS8GY8tMiftMLOvoCwf9/Q7DUb1jYpCbSiu2qLc5LLZXu', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
+(3, 'gleason.anastasia', 'jwalsh@example.org', '$2y$12$RAQcujtCSFodeQkt4TZv4uKRE0RIYW/J.Z89i/TmR8vJaQx9v92ya', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
+(4, 'wward', 'fadel.rosalee@example.com', '$2y$12$GQ8n5YZtBqnpEL2Jbn.zNuzkkhqu2s0/3VVT3GFDueD723qhWUFwW', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
+(5, 'lang.kariane', 'vgleichner@example.com', '$2y$12$J42.jhzZs/MSa.PeAMQ7oe9sAoEF11u2JaId4EodfaFRFdpYG3EgW', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
+(6, 'yundt.noe', 'giuseppe.mcdermott@example.com', '$2y$12$Nk2IdShDbB/7No.IlnLOkeLy4LQ93V6iYEB25eYXDIQlfFbu5T9Je', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
+(7, 'rfadel', 'gerard.volkman@example.com', '$2y$12$HEjJG4pkp1pFEIPEH2ycCeccV9asF3pqOj1AFNXZnpv7IqxQsxY96', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
+(8, 'eldora.moore', 'leannon.leora@example.net', '$2y$12$Vj/11cX8GifFMm0jTLuiauCJ7WtJIhxzOtbzPoYyo6kxKx4rlqKe6', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
+(9, 'hokuneva', 'kohler.alisa@example.org', '$2y$12$7QVXZxFCNs7aP2Rzevhecu/xW.jQIrMqomDr6fsZ72hD8Em0D1TCm', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
+(10, 'wking', 'lamar81@example.org', '$2y$12$liD6Qxju1JYB6siA6zydAOf2KJ7e7f2AtowPiuq0w5jYADVW1S3O.', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
+(11, '0', 'saju.gub@gmail.com', '$2y$12$c2zu.bGJEHEz3nR3sxF.VuHQxVf7Bqt58g.dYcom9SrSy4nHbCAsW', NULL, '2025-04-16 12:28:57', '2025-04-16 12:28:57');
 
 --
 -- Indexes for dumped tables
@@ -276,6 +304,14 @@ ALTER TABLE `post_tag`
   ADD PRIMARY KEY (`id`),
   ADD KEY `post_tag_post_id_foreign` (`post_id`),
   ADD KEY `post_tag_tag_id_foreign` (`tag_id`);
+
+--
+-- Indexes for table `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `sessions_user_id_index` (`user_id`),
+  ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
 -- Indexes for table `tags`
@@ -348,7 +384,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
