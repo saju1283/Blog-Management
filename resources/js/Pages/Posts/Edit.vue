@@ -3,7 +3,7 @@
     <div class="col-md-8 offset-md-2">
       <div class="card shadow-sm">
         <div class="card-body">
-          <h3 class="mb-4">Create New Post</h3>
+          <h3 class="mb-4">Edit Post</h3>
           <form @submit.prevent="submit">
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
@@ -48,16 +48,6 @@
             </div>
 
             <div class="mb-3">
-              <label for="image" class="form-label">Upload Image</label>
-              <input
-                type="file"
-                id="image"
-                class="form-control"
-                @change="handleImageUpload"
-              />
-            </div>
-
-            <div class="mb-3">
               <label class="form-label">Visibility</label>
               <select class="form-select" v-model="form.visibility">
                 <option value="Public">Public</option>
@@ -65,7 +55,7 @@
               </select>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Publish Post</button>
+            <button type="submit" class="btn btn-success w-100">Update Post</button>
           </form>
         </div>
       </div>
@@ -75,20 +65,20 @@
 
 <script setup>
 import { useForm } from '@inertiajs/vue3'
+import { defineProps } from 'vue'
 
-const form = useForm({
-  title: '',
-  content: '',
-  tags: '',
-  visibility: 'Public',
-  image: null
+const props = defineProps({
+  post: Object
 })
 
-const handleImageUpload = (e) => {
-  form.image = e.target.files[0]
-}
+const form = useForm({
+  title: props.post.title,
+  content: props.post.content,
+  tags: props.post.tags,
+  visibility: props.post.visibility
+})
 
 const submit = () => {
-  form.post('/posts') // Backend endpoint to be configured in Laravel
+  form.put(`/posts/${props.post.id}`)
 }
 </script>

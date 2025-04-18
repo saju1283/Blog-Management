@@ -23,13 +23,12 @@
 </template>
 
 <script setup>
-  import { router } from '@inertiajs/vue3'
+import { router } from '@inertiajs/vue3'
 
-  const logout = () => {
-    router.post('/logout')
-  }
+const logout = () => {
+  router.post('/logout')
+}
 </script>
-
 
 <style scoped>
 .nav-link:hover {
