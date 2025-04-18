@@ -2,40 +2,41 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bookmark;
-use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Bookmark;
 use Inertia\Inertia;
 
 class BookmarkController extends Controller
 {
     public function index()
     {
-        $bookmarks = auth()->user()->bookmarks()
-            ->with(['post.user', 'post.tags'])
+        $bookmarks = Bookmark::with('post.user')
+            ->where('user_id', Auth::id())
             ->latest()
-            ->paginate(10);
+            ->paginate(10)
+            ->withQueryString();
 
-        return Inertia::render('Bookmarks/Index', [
+        return Inertia::render('Bookmarks', [
             'bookmarks' => $bookmarks
         ]);
     }
 
-    public function toggle(Post $post)
+    public function toggle(Request $request)
     {
-        $user = auth()->user();
-        
-        $bookmark = $post->bookmarks()->where('user_id', $user->id)->first();
+        $bookmark = Bookmark::where('user_id', Auth::id())
+            ->where('post_id', $request->post_id)
+            ->first();
 
         if ($bookmark) {
             $bookmark->delete();
-            return back()->with('success', 'Post removed from bookmarks!');
         } else {
-            $bookmark = new Bookmark();
-            $bookmark->user_id = $user->id;
-            $bookmark->post_id = $post->id;
-            $bookmark->save();
-            return back()->with('success', 'Post bookmarked!');
+            Bookmark::create([
+                'user_id' => Auth::id(),
+                'post_id' => $request->post_id
+            ]);
         }
+
+        return back();
     }
 }

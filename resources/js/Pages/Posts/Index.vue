@@ -1,157 +1,157 @@
-<template>
-  <AppLayout>
-    <div class="container py-4">
-      <div class="row mb-4">
-        <div class="col-md-8 mx-auto">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search posts..." 
-                   v-model="search" @keyup.enter="searchPosts">
-            <button class="btn btn-primary" type="button" @click="searchPosts">
-              <i class="bi bi-search"></i> Search
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div v-if="$page.props.auth.user" class="row mb-4">
-        <div class="col-md-8 mx-auto">
-          <Link href="/posts/create" class="btn btn-success">
-            <i class="bi bi-plus-circle"></i> Create New Post
-          </Link>
-        </div>
-      </div>
-
-      <div v-if="posts.data.length" class="row">
-        <div v-for="post in posts.data" :key="post.id" class="col-md-8 mx-auto mb-4">
-          <div class="card hover-shadow">
-            <img v-if="post.image" :src="post.image" class="card-img-top" :alt="post.title">
-            <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <h5 class="card-title mb-0">
-                  <Link :href="`/posts/${post.id}`">{{ post.title }}</Link>
-                </h5>
-                <small class="text-muted">Posted by 
-                  <Link :href="`/?search=${post.user.username}`">{{ post.user.username }}</Link>
-                </small>
-              </div>
-              
-              <div class="mb-2">
-                <span v-for="tag in post.tags" :key="tag.id" class="badge bg-secondary me-1">
-                  {{ tag.name }}
-                </span>
-              </div>
-              
-              <p class="card-text">{{ truncateContent(post.content, 200) }}</p>
-              
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <button @click="toggleLike(post)" class="btn btn-sm btn-outline-primary me-2">
-                    <i :class="`bi ${isLiked(post) ? 'bi-heart-fill text-danger' : 'bi-heart'}`"></i>
-                    {{ post.likes.length }}
-                  </button>
-                  <Link :href="`/posts/${post.id}`" class="btn btn-sm btn-outline-secondary me-2">
-                    <i class="bi bi-chat"></i> {{ post.comments.length }} comments
-                  </Link>
-                  <button v-if="$page.props.auth.user" @click="toggleBookmark(post)" class="btn btn-sm btn-outline-info">
-                    <i :class="`bi ${isBookmarked(post) ? 'bi-bookmark-fill' : 'bi-bookmark'}`"></i>
-                  </button>
-                </div>
-                <small class="text-muted">{{ formatDate(post.created_at) }}</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-8 mx-auto">
-          <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-              <li v-for="link in posts.links" :key="link.label" class="page-item" 
-                  :class="{ 'active': link.active, 'disabled': !link.url }">
-                <Link v-if="link.url" class="page-link" :href="link.url" v-html="link.label"></Link>
-                <span v-else class="page-link" v-html="link.label"></span>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
-      <div v-else class="text-center py-5">
-        <h4>No posts found</h4>
-        <p v-if="search">Try a different search term</p>
-        <Link v-if="$page.props.auth.user" href="/posts/create" class="btn btn-primary mt-3">
-          Create your first post
-        </Link>
-      </div>
-    </div>
-  </AppLayout>
-</template>
-
 <script setup>
-import { Link, router } from '@inertiajs/vue3';
-import AppLayout from '@/Layouts/AppLayout.vue';
-import { ref, computed } from 'vue';
+import DashboardLayout from '@/Layouts/DashboardLayout.vue'
+import { defineProps, ref, watch } from 'vue'
+import { router } from '@inertiajs/vue3'
+
+defineOptions({ layout: DashboardLayout })
 
 const props = defineProps({
-  posts: Object,
-  search: String
-});
-
-const search = ref(props.search);
-
-const searchPosts = () => {
-  router.get('/', { search: search.value });
-};
-
-const formatDate = (dateString) => {
-  return new Date(dateString).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  });
-};
-
-const truncateContent = (content, length) => {
-  return content.length > length 
-    ? content.substring(0, length) + '...' 
-    : content;
-};
-
-const isLiked = (post) => {
-  if (!props.$page.props.auth.user) return false;
-  return post.likes.some(like => like.user_id === props.$page.props.auth.user.id);
-};
-
-const isBookmarked = (post) => {
-  if (!props.$page.props.auth.user) return false;
-  return post.bookmarks.some(b => b.user_id === props.$page.props.auth.user.id);
-};
-
-const toggleLike = (post) => {
-  if (!props.$page.props.auth.user) {
-    router.visit('/login');
-    return;
+  posts: {
+    type: Object,
+    default: () => ({ data: [] })
   }
-  
-  router.post(`/posts/${post.id}/like`, {}, {
-    preserveScroll: true,
-    preserveState: true
-  });
-};
+})
 
-const toggleBookmark = (post) => {
-  router.post(`/posts/${post.id}/bookmark`, {}, {
-    preserveScroll: true,
-    preserveState: true
-  });
-};
-</script>
+const defaultProfile = '/images/default.png'
+const search = ref('')
+const visibility = ref('')
+const filteredPosts = ref([...props.posts.data])
+const newComment = ref('')
 
-<style scoped>
-.card {
-  transition: transform 0.2s;
+watch(() => props.posts.data, (newVal) => {
+  filteredPosts.value = [...newVal]
+})
+
+function filterPosts() {
+  const keyword = search.value.toLowerCase()
+  filteredPosts.value = props.posts.data.filter(post =>
+    post.title.toLowerCase().includes(keyword) ||
+    post.content.toLowerCase().includes(keyword) ||
+    post.user.username.toLowerCase().includes(keyword)
+  )
 }
 
-.card:hover {
-  transform: translateY(-2px);
+function applyVisibility() {
+  router.get('/posts', {
+    visibility: visibility.value
+  }, {
+    preserveScroll: true,
+    preserveState: true
+  })
+}
+
+const changePage = (url) => {
+  if (!url) return
+  router.visit(url, {
+    preserveScroll: true,
+    preserveState: true
+  })
+}
+
+const likePost = (post) => {
+  router.post(`/posts/${post.id}/like`, {}, {
+    preserveScroll: true,
+    preserveState: true,
+    only: ['posts']
+  })
+}
+
+const bookmarkPost = (post) => {
+  router.post('/bookmarks', { post_id: post.id }, {
+    preserveScroll: true,
+    preserveState: true,
+    only: ['posts']
+  })
+}
+
+const submitComment = (postId) => {
+  if (!newComment.value.trim()) return
+  router.post(`/posts/${postId}/comments`, { body: newComment.value }, {
+    preserveScroll: true,
+    onSuccess: () => newComment.value = ''
+  })
+}
+</script>
+
+<template>
+  <div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4 gap-2">
+      <h2>All Posts</h2>
+      <div class="d-flex gap-2 w-75">
+        <input type="text" class="form-control" placeholder="Search posts..." v-model="search" @input="filterPosts">
+        <select class="form-select" v-model="visibility" @change="applyVisibility">
+          <option value="">All</option>
+          <option value="public">Public</option>
+          <option value="private">Private</option>
+        </select>
+      </div>
+    </div>
+
+    <div v-if="filteredPosts.length">
+      <div class="card mb-4" v-for="post in filteredPosts" :key="post.id">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div class="d-flex align-items-center">
+              <img :src="post.user.profile_picture || defaultProfile" class="rounded-circle me-2" width="40" height="40">
+              <strong>{{ post.user.username }}</strong>
+            </div>
+            <span class="badge bg-secondary text-capitalize">{{ post.visibility }}</span>
+          </div>
+
+          <h5 class="mt-3">{{ post.title }}</h5>
+          <p>{{ post.content.slice(0, 150) }}...</p>
+
+          <div class="d-flex gap-3 mt-2">
+            <button
+              class="btn btn-sm"
+              :class="post.liked_by_user ? 'btn-primary' : 'btn-outline-primary'"
+              @click="likePost(post)"
+            >
+              {{ post.liked_by_user ? 'Unlike' : 'Like' }}
+            </button>
+
+            <button
+              class="btn btn-sm"
+              :class="post.bookmarked_by_user ? 'btn-success' : 'btn-outline-success'"
+              @click="bookmarkPost(post)"
+            >
+              {{ post.bookmarked_by_user ? 'Remove Bookmark' : 'Bookmark' }}
+            </button>
+          </div>
+
+          <form class="mt-3" @submit.prevent="submitComment(post.id)">
+            <textarea class="form-control mb-2" placeholder="Write a comment..." v-model="newComment"></textarea>
+            <button type="submit" class="btn btn-sm btn-outline-secondary">Comment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div v-else>
+      <p>No posts found.</p>
+    </div>
+
+    <div class="d-flex justify-content-between mt-4" v-if="props.posts.total > props.posts.per_page">
+      <button
+        class="btn btn-outline-secondary"
+        :disabled="!props.posts.prev_page_url"
+        @click="changePage(props.posts.prev_page_url)"
+      >
+        Previous
+      </button>
+      <button
+        class="btn btn-outline-secondary"
+        :disabled="!props.posts.next_page_url"
+        @click="changePage(props.posts.next_page_url)"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+img.rounded-circle {
+  object-fit: cover;
 }
 </style>

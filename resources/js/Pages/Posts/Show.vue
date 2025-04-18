@@ -77,6 +77,8 @@ const submitComment = () => {
     onSuccess: () => newComment.value = ''
   })
 }
+import DashboardLayout from '@/Layouts/DashboardLayout.vue'
+defineOptions({ layout: DashboardLayout })
 </script>
 
 <style scoped>

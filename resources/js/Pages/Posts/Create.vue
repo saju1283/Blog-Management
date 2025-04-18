@@ -1,3 +1,23 @@
+<script setup>
+import { useForm, router } from '@inertiajs/vue3'
+
+const form = useForm({
+  title: '',
+  content: '',
+  tags: '',
+  visibility: 'Public',
+  image: null
+})
+
+const handleImageUpload = (e) => {
+  form.image = e.target.files[0]
+}
+
+const submit = () => {
+  form.post('/posts') // or route('posts.store') if route helper is available
+}
+</script>
+
 <template>
   <div class="container py-4">
     <div class="col-md-8 offset-md-2">
@@ -72,23 +92,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { useForm } from '@inertiajs/vue3'
-
-const form = useForm({
-  title: '',
-  content: '',
-  tags: '',
-  visibility: 'Public',
-  image: null
-})
-
-const handleImageUpload = (e) => {
-  form.image = e.target.files[0]
-}
-
-const submit = () => {
-  form.post('/posts') // Backend endpoint to be configured in Laravel
-}
-</script>

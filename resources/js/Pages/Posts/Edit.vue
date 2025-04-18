@@ -81,4 +81,7 @@ const form = useForm({
 const submit = () => {
   form.put(`/posts/${props.post.id}`)
 }
+
+import DashboardLayout from '@/Layouts/DashboardLayout.vue'
+defineOptions({ layout: DashboardLayout })
 </script>
