@@ -16,34 +16,43 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
-    public function run(): void
-{
-    // Create users
-    User::factory(10)->create();
+        public function run(): void
+        {
+            // 1. Users
+            User::factory(10)->create();
 
-    // Create tags
-    $tags = Tag::factory(5)->create();
+            // 2. Tags
+            $tags = Tag::factory(5)->create();
 
-    // Create posts
-    $posts = Post::factory(20)->create();
+            // 3. Posts
+            $posts = Post::factory(20)->create();
 
-    // Attach random tags to posts
-    foreach ($posts as $post) {
-        $post->tags()->attach(
-            $tags->random(rand(1, 3))->pluck('id')->toArray()
-        );
+            // 4. Attach tags to posts
+            foreach ($posts as $post) {
+                $post->tags()->attach(
+                    $tags->random(rand(1, 3))->pluck('id')->toArray()
+                );
+            }
+
+            // 5. Comments
+            Comment::factory(30)->create();
+
+            // 6. Likes and bookmarks
+            foreach ($posts as $post) {
+                $users = User::inRandomOrder()->take(rand(1, 5))->get();
+
+                foreach ($users as $user) {
+                    \App\Models\Like::create([
+                        'user_id' => $user->id,
+                        'post_id' => $post->id,
+                    ]);
+
+                    \App\Models\Bookmark::create([
+                        'user_id' => $user->id,
+                        'post_id' => $post->id,
+                    ]);
+                }
+            }
     }
 
-    // Create comments
-    Comment::factory(30)->create();
-
-    // Add likes and bookmarks
-    foreach ($posts as $post) {
-        $users = User::inRandomOrder()->take(rand(1, 5))->get();
-        foreach ($users as $user) {
-            $post->likes()->create(['user_id' => $user->id]);
-            $post->bookmarks()->create(['user_id' => $user->id]);
-        }
-    }
-}
 }

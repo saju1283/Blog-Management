@@ -2,29 +2,21 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
- */
 class PostFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    // database/factories/PostFactory.php
+    protected $model = \App\Models\Post::class;
 
-public function definition(): array
-{
-    return [
-        'user_id' => \App\Models\User::factory(),
-        'title' => fake()->sentence(),
-        'content' => fake()->paragraph(5),
-        'image' => null,
-        'visibility' => fake()->randomElement(['public', 'private']),
-    ];
-}
-
+    public function definition(): array
+    {
+        return [
+            'user_id' => User::inRandomOrder()->first()?->id ?? User::factory(),
+            'title' => $this->faker->sentence(),
+            'content' => $this->faker->paragraph(4),
+            'image' => null,
+            'visibility' => $this->faker->randomElement(['public', 'private']),
+        ];
+    }
 }

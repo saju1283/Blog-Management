@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2025 at 08:31 PM
+-- Generation Time: Apr 18, 2025 at 12:30 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,6 +34,65 @@ CREATE TABLE `bookmarks` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bookmarks`
+--
+
+INSERT INTO `bookmarks` (`id`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES
+(1, 7, 1, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(2, 10, 1, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(3, 4, 1, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(4, 1, 1, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(5, 5, 1, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(6, 7, 2, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(7, 1, 3, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(8, 3, 3, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(9, 8, 3, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(10, 8, 4, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(11, 1, 5, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(12, 10, 5, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(13, 10, 6, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(14, 7, 6, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(15, 9, 7, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(16, 8, 7, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(17, 4, 7, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(18, 1, 8, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(19, 9, 9, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(20, 6, 9, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(21, 1, 10, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(22, 5, 10, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(23, 4, 10, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(24, 10, 11, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(25, 7, 11, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(26, 4, 12, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(27, 7, 12, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(28, 6, 13, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(29, 10, 14, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(30, 3, 15, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(31, 10, 15, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(32, 7, 15, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(33, 4, 15, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(34, 1, 15, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(35, 5, 16, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(36, 6, 16, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(37, 2, 16, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(38, 7, 16, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(39, 1, 17, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(40, 6, 17, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(41, 8, 17, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(42, 10, 17, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(43, 10, 18, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(44, 9, 18, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(45, 6, 18, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(46, 7, 18, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(47, 1, 18, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(48, 2, 19, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(49, 1, 20, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(50, 5, 20, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(51, 7, 20, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(52, 10, 20, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(53, 6, 20, '2025-04-18 04:27:44', '2025-04-18 04:27:44');
 
 -- --------------------------------------------------------
 
@@ -75,6 +134,42 @@ CREATE TABLE `comments` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `user_id`, `post_id`, `parent_id`, `content`, `created_at`, `updated_at`) VALUES
+(1, 1, 4, NULL, 'Vel sit qui dolores amet et similique sit quisquam.', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(2, 2, 17, NULL, 'Velit rerum distinctio deleniti architecto omnis sed ut.', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(3, 4, 13, NULL, 'Officiis at sapiente laudantium quam illum.', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(4, 3, 11, NULL, 'Sequi beatae nam sit voluptates at.', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(5, 10, 5, NULL, 'Praesentium earum non officiis quo expedita quibusdam voluptatem deserunt.', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(6, 4, 10, NULL, 'Illo sunt et enim incidunt.', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(7, 7, 11, NULL, 'Asperiores maiores repellendus unde necessitatibus hic doloribus.', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(8, 1, 19, NULL, 'Voluptates assumenda et blanditiis non.', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(9, 4, 6, NULL, 'Autem aut alias doloribus molestiae enim qui.', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(10, 3, 12, NULL, 'Corporis rerum rerum tempore atque consequatur quasi numquam.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(11, 2, 5, NULL, 'Ad debitis accusantium quas natus molestiae.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(12, 4, 5, NULL, 'Quis libero vel est deserunt dolorem modi fugit eius.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(13, 7, 7, NULL, 'Debitis accusamus rerum sed voluptate.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(14, 8, 6, NULL, 'Aliquid sint et quam qui et.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(15, 9, 12, NULL, 'Praesentium inventore quia exercitationem enim amet molestiae.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(16, 1, 7, NULL, 'Perferendis tempore molestias sunt accusamus.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(17, 4, 20, NULL, 'Non et adipisci repellendus dolorem quia eum.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(18, 3, 19, NULL, 'Quaerat reiciendis molestias est consectetur quo saepe.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(19, 8, 18, NULL, 'Nemo ut enim aut non sed occaecati totam illum.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(20, 6, 13, NULL, 'Molestias et omnis ratione odio tempore voluptate vitae a.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(21, 8, 15, NULL, 'Et ab consequatur voluptatem nesciunt ut eum.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(22, 4, 19, NULL, 'Molestiae suscipit fugiat tenetur consequatur quia.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(23, 1, 3, NULL, 'Similique sunt omnis non aliquam dicta voluptatibus ex dignissimos.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(24, 10, 1, NULL, 'Ut voluptates vel minima rerum labore ea enim quas.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(25, 4, 10, NULL, 'Magnam ad aut accusamus consequatur et quo.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(26, 10, 11, NULL, 'Dicta molestias quia laudantium aut soluta quis sed dolorem.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(27, 1, 20, NULL, 'Perferendis amet aliquid in atque delectus itaque eum expedita.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(28, 4, 9, NULL, 'Animi eos ut facilis et aut excepturi.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(29, 5, 12, NULL, 'Ut et qui expedita debitis quos.', '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(30, 4, 20, NULL, 'Numquam et delectus nisi excepturi aliquam consequatur commodi.', '2025-04-18 04:27:44', '2025-04-18 04:27:44');
+
 -- --------------------------------------------------------
 
 --
@@ -88,6 +183,65 @@ CREATE TABLE `likes` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `likes`
+--
+
+INSERT INTO `likes` (`id`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES
+(1, 7, 1, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(2, 10, 1, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(3, 4, 1, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(4, 1, 1, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(5, 5, 1, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(6, 7, 2, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(7, 1, 3, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(8, 3, 3, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(9, 8, 3, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(10, 8, 4, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(11, 1, 5, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(12, 10, 5, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(13, 10, 6, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(14, 7, 6, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(15, 9, 7, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(16, 8, 7, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(17, 4, 7, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(18, 1, 8, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(19, 9, 9, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(20, 6, 9, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(21, 1, 10, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(22, 5, 10, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(23, 4, 10, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(24, 10, 11, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(25, 7, 11, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(26, 4, 12, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(27, 7, 12, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(28, 6, 13, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(29, 10, 14, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(30, 3, 15, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(31, 10, 15, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(32, 7, 15, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(33, 4, 15, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(34, 1, 15, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(35, 5, 16, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(36, 6, 16, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(37, 2, 16, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(38, 7, 16, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(39, 1, 17, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(40, 6, 17, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(41, 8, 17, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(42, 10, 17, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(43, 10, 18, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(44, 9, 18, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(45, 6, 18, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(46, 7, 18, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(47, 1, 18, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(48, 2, 19, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(49, 1, 20, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(50, 5, 20, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(51, 7, 20, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(52, 10, 20, '2025-04-18 04:27:44', '2025-04-18 04:27:44'),
+(53, 6, 20, '2025-04-18 04:27:44', '2025-04-18 04:27:44');
 
 -- --------------------------------------------------------
 
@@ -149,6 +303,32 @@ CREATE TABLE `posts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `user_id`, `title`, `content`, `image`, `visibility`, `created_at`, `updated_at`) VALUES
+(1, 7, 'Numquam quas suscipit velit rerum dolor.', 'Nisi dolore in reprehenderit deleniti distinctio in quia doloremque. Rerum aliquam quae quae tempora quibusdam aut eaque. Doloremque deleniti unde aliquid vel rerum ea ut.', NULL, 'private', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(2, 9, 'Tempora aut voluptate velit laborum eius eos quam.', 'Natus voluptatem qui voluptatem nam. Nihil animi dignissimos commodi cumque. Aperiam officia soluta velit repellendus velit ad dolor quam. Atque nobis aut omnis molestiae. Et atque iure itaque sequi. Facere et voluptas maiores quis iusto laboriosam.', NULL, 'public', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(3, 5, 'Est quas esse eligendi.', 'Doloribus quo numquam debitis ea. Repellendus ut ab perspiciatis iste. Dolores odit non odio. Maiores doloribus et et quidem sed. Non dolores repudiandae velit. Fugit quis quo asperiores illo et.', NULL, 'public', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(4, 6, 'Et nostrum deleniti quisquam incidunt.', 'Veritatis quis eos laboriosam et eligendi et repellendus. Fugiat qui est laboriosam adipisci totam voluptatem. Exercitationem consequatur distinctio et odio qui sunt consequatur. Id eligendi inventore suscipit eos quis. Et pariatur qui sequi est possimus mollitia.', NULL, 'public', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(5, 8, 'Officia placeat laudantium quasi iste.', 'Et quo nihil est exercitationem. Natus adipisci quisquam porro eaque ducimus sed. Unde et harum occaecati magni esse. Illum et reprehenderit et. Voluptas nobis id enim atque distinctio ducimus rerum corrupti.', NULL, 'private', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(6, 10, 'Aut et voluptates odio et qui excepturi consequuntur.', 'Error ut quis perspiciatis asperiores dolores deserunt nobis. Eius id odit rerum velit provident. Ut aspernatur sint accusantium vitae ab animi quis. Qui nisi ut accusamus repellat et neque.', NULL, 'public', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(7, 8, 'In vero vel porro facilis.', 'Qui cupiditate est pariatur esse pariatur dicta. Qui fugit deserunt et rerum voluptas alias et. Nihil sed quidem libero in perspiciatis. Sunt soluta provident alias quisquam occaecati at.', NULL, 'private', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(8, 2, 'In vel quia nam reprehenderit fugit ut molestiae.', 'Autem molestiae ducimus deserunt enim. Delectus labore reprehenderit et deleniti. Id unde et asperiores asperiores porro. Aut et quos magnam voluptas aut nihil cumque. Omnis voluptatem nam vel.', NULL, 'private', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(9, 6, 'A in reprehenderit voluptatibus qui id aut quis.', 'Aut et voluptas quas saepe. Nam et rerum ullam sed ea debitis. Qui sed nostrum soluta. Voluptatem iusto ut ea corporis ipsam cumque sed. Et minima dolores aperiam.', NULL, 'private', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(10, 4, 'Aut provident consequatur doloremque non.', 'Recusandae perspiciatis praesentium voluptas mollitia et reiciendis. Sunt quae fugiat quasi laborum. Fugiat repellendus et deleniti est laudantium doloribus. Minus impedit tempore blanditiis voluptatem corrupti.', NULL, 'private', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(11, 5, 'Nihil odit ipsam consequatur reiciendis consequuntur laboriosam.', 'Odio vel velit laudantium nostrum qui qui labore. Corrupti delectus occaecati quis sint vitae illo. Iusto dolorem non molestiae debitis. Nisi ut non asperiores repellat modi minus. Nemo et doloremque dolorem est autem cum temporibus. Aut est eligendi suscipit praesentium animi facilis aut.', NULL, 'private', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(12, 5, 'Id quae neque dolorum a.', 'Fugit sint aut doloremque et est occaecati. Sint consequatur voluptas voluptas distinctio quibusdam id. Autem distinctio exercitationem non perferendis natus molestias impedit. Quo voluptate molestias harum in aut accusamus laudantium. Delectus aperiam eligendi repellat et aliquid. Impedit animi velit quia porro esse.', NULL, 'public', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(13, 4, 'Corrupti distinctio corrupti nobis fugiat autem cum dignissimos.', 'Debitis porro commodi non quod vitae. Doloremque sit porro dolorum dolores saepe. Ex ipsam omnis ullam ab nihil. Voluptatem magnam excepturi praesentium quam autem non.', NULL, 'private', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(14, 9, 'Ipsam recusandae dolorum accusamus rerum ea repudiandae ut.', 'Reiciendis iste et consequatur voluptatem. Soluta optio quia amet qui necessitatibus dolores est. Occaecati asperiores et blanditiis saepe. Maiores consectetur iste animi aut aut aut. Ea non similique est ut harum et.', NULL, 'private', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(15, 10, 'Eum quia eaque voluptatem laboriosam.', 'Amet vero minima est saepe. Molestias quos aspernatur consectetur corporis corporis fugit modi. Maxime doloribus quam placeat esse asperiores facilis incidunt. Magnam aut aliquam quae quis dignissimos.', NULL, 'private', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(16, 9, 'Quia omnis dignissimos autem ad quod excepturi.', 'Possimus adipisci blanditiis cumque repudiandae voluptatibus. Quae ut est ea dolorum consequuntur natus. Exercitationem similique voluptatum unde voluptatibus doloribus.', NULL, 'public', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(17, 5, 'Accusamus modi hic magnam ut officiis libero quo.', 'Laudantium assumenda est et dolorem repudiandae. Tenetur rem numquam non delectus. Laborum eaque iure culpa explicabo dignissimos quas et. Debitis totam totam quia et mollitia sed fugit. Eveniet dolorum repellendus est nobis.', NULL, 'private', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(18, 4, 'Et modi quod voluptatum aliquam.', 'Blanditiis saepe asperiores corrupti eveniet nobis repudiandae omnis. Officia et ipsam consectetur quia. Maxime nulla labore molestias iure dolores harum corporis. Hic et vel et modi qui ut dolor. Animi magni provident pariatur quis velit. Delectus eum quia ut quia eligendi qui.', NULL, 'private', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(19, 1, 'Qui maxime vel sunt ut aspernatur.', 'Impedit quis aut vel quisquam velit unde velit. Labore debitis similique suscipit quas ea est voluptas. Natus officia consequatur eos eaque autem labore nulla. Occaecati voluptatum odio voluptatibus nemo eveniet labore.', NULL, 'public', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(20, 6, 'Enim sunt magni autem neque quo placeat maiores.', 'Beatae neque eum et. Quia qui quis suscipit velit occaecati quod esse. Est ut exercitationem tempore fugiat voluptas voluptatem. Exercitationem perspiciatis provident nihil quo veritatis ut deleniti consequatur. Adipisci repudiandae minima ea ratione dolore laudantium facilis.', NULL, 'public', '2025-04-18 04:27:43', '2025-04-18 04:27:43');
+
 -- --------------------------------------------------------
 
 --
@@ -163,32 +343,48 @@ CREATE TABLE `post_tag` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `sessions`
+-- Dumping data for table `post_tag`
 --
 
-CREATE TABLE `sessions` (
-  `id` varchar(255) NOT NULL,
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `ip_address` varchar(45) DEFAULT NULL,
-  `user_agent` text DEFAULT NULL,
-  `payload` longtext NOT NULL,
-  `last_activity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `sessions`
---
-
-INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('DiYamKE06KQblQ3s2TgqG4BCOnAFWaJztpHblHJJ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMXZudXMweDdIckUxWXY2TFlZWGpQZ3ZvSGdTbG5Wcm5LZlg3VlAxZyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1744222234),
-('IEQFQTpihOZ0kqHTvX1lhme9QeADWxW89QZQvD7r', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOVEyaDdXc2JudzFmbldUSHcwS2xSU0JhY09XWFZxZk9kOXY3cWhXcCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1744222823),
-('LCz0F5OjlSt5maAO5YMFGRkUqu7nrdxuXRdc5I0v', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSXdpNXRwMHlKUU42N2llamppOXJjb1ZFNU1iMXExUlRzMlJvZW02QSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1744222093),
-('PsaJWnAVyVtaJRbpEa140teKTNSFt1xXSZTE0oHH', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il9mbGFzaCI7YToyOntzOjM6Im5ldyI7YTowOnt9czozOiJvbGQiO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoiRFdnMFNudWl1QllqNU9IRnFQQmRnTEpyeDVRakROem80akptdllscSI7czo1OiJlbWFpbCI7czoxNzoic2FqdTEyNEBnbWFpbC5jb20iO3M6NzoidXNlcl9pZCI7aTo0O30=', 1744224916),
-('tcx56NfdQNjvckkqRb3NKdeGuqzzZyDkRlDUnoCE', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiR0xXMjlOcFpGVkRIRk05WGlDQnlDZ0FUeWlkZ1VRdEl1N2Ixb21TdiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1744222534),
-('z5Ssx8GaVhm3Gtajc3xxCPsIrZMUQm8Mek0co9VP', 11, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiWE1VcnBWZk81bWx0bHZ0R1VPU2VLZWw1UjBVUW53b3dFUW9rUnJnWiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9yZWdpc3RlciI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjExO30=', 1744828139);
+INSERT INTO `post_tag` (`id`, `post_id`, `tag_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, NULL, NULL),
+(2, 1, 4, NULL, NULL),
+(3, 2, 1, NULL, NULL),
+(4, 2, 4, NULL, NULL),
+(5, 3, 2, NULL, NULL),
+(6, 3, 4, NULL, NULL),
+(7, 3, 5, NULL, NULL),
+(8, 4, 1, NULL, NULL),
+(9, 4, 5, NULL, NULL),
+(10, 5, 1, NULL, NULL),
+(11, 5, 3, NULL, NULL),
+(12, 6, 1, NULL, NULL),
+(13, 7, 1, NULL, NULL),
+(14, 7, 5, NULL, NULL),
+(15, 8, 1, NULL, NULL),
+(16, 8, 5, NULL, NULL),
+(17, 9, 3, NULL, NULL),
+(18, 10, 1, NULL, NULL),
+(19, 11, 1, NULL, NULL),
+(20, 11, 3, NULL, NULL),
+(21, 11, 4, NULL, NULL),
+(22, 12, 3, NULL, NULL),
+(23, 13, 1, NULL, NULL),
+(24, 13, 2, NULL, NULL),
+(25, 13, 4, NULL, NULL),
+(26, 14, 2, NULL, NULL),
+(27, 15, 1, NULL, NULL),
+(28, 15, 5, NULL, NULL),
+(29, 16, 1, NULL, NULL),
+(30, 16, 2, NULL, NULL),
+(31, 16, 5, NULL, NULL),
+(32, 17, 2, NULL, NULL),
+(33, 18, 1, NULL, NULL),
+(34, 19, 2, NULL, NULL),
+(35, 20, 1, NULL, NULL),
+(36, 20, 3, NULL, NULL),
+(37, 20, 4, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -203,6 +399,17 @@ CREATE TABLE `tags` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `tags`
+--
+
+INSERT INTO `tags` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'vitae', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(2, 'quas', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(3, 'eum', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(4, 'dolore', '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(5, 'quo', '2025-04-18 04:27:43', '2025-04-18 04:27:43');
+
 -- --------------------------------------------------------
 
 --
@@ -211,7 +418,7 @@ CREATE TABLE `tags` (
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `username` varchar(255) NOT NULL DEFAULT '0',
+  `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `profile_pic` varchar(255) DEFAULT NULL,
@@ -224,17 +431,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `profile_pic`, `created_at`, `updated_at`) VALUES
-(1, 'fbalistreri', 'hermann.aglae@example.net', '$2y$12$rLpeyhF4nOLSFKM5T49XXeNPDKhi7bJKskJvivKyMpjrQlfkpBkBC', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
-(2, 'lebsack.trace', 'dawson19@example.net', '$2y$12$XHUOCMRbkS8GY8tMiftMLOvoCwf9/Q7DUb1jYpCbSiu2qLc5LLZXu', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
-(3, 'gleason.anastasia', 'jwalsh@example.org', '$2y$12$RAQcujtCSFodeQkt4TZv4uKRE0RIYW/J.Z89i/TmR8vJaQx9v92ya', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
-(4, 'wward', 'fadel.rosalee@example.com', '$2y$12$GQ8n5YZtBqnpEL2Jbn.zNuzkkhqu2s0/3VVT3GFDueD723qhWUFwW', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
-(5, 'lang.kariane', 'vgleichner@example.com', '$2y$12$J42.jhzZs/MSa.PeAMQ7oe9sAoEF11u2JaId4EodfaFRFdpYG3EgW', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
-(6, 'yundt.noe', 'giuseppe.mcdermott@example.com', '$2y$12$Nk2IdShDbB/7No.IlnLOkeLy4LQ93V6iYEB25eYXDIQlfFbu5T9Je', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
-(7, 'rfadel', 'gerard.volkman@example.com', '$2y$12$HEjJG4pkp1pFEIPEH2ycCeccV9asF3pqOj1AFNXZnpv7IqxQsxY96', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
-(8, 'eldora.moore', 'leannon.leora@example.net', '$2y$12$Vj/11cX8GifFMm0jTLuiauCJ7WtJIhxzOtbzPoYyo6kxKx4rlqKe6', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
-(9, 'hokuneva', 'kohler.alisa@example.org', '$2y$12$7QVXZxFCNs7aP2Rzevhecu/xW.jQIrMqomDr6fsZ72hD8Em0D1TCm', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
-(10, 'wking', 'lamar81@example.org', '$2y$12$liD6Qxju1JYB6siA6zydAOf2KJ7e7f2AtowPiuq0w5jYADVW1S3O.', NULL, '2025-04-16 12:21:40', '2025-04-16 12:21:40'),
-(11, '0', 'saju.gub@gmail.com', '$2y$12$c2zu.bGJEHEz3nR3sxF.VuHQxVf7Bqt58g.dYcom9SrSy4nHbCAsW', NULL, '2025-04-16 12:28:57', '2025-04-16 12:28:57');
+(1, 'dickens.connie', 'ned.robel@example.com', '$2y$12$cuFoB01riGoffJEOlMpBfeZUCKJ1Rgx1C7SQWP6ROkJn4iIRaMVxW', NULL, '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(2, 'luz70', 'elbert.rowe@example.net', '$2y$12$d1Jox3LofyNFob9U2SQhO.fRDZ1VpJC1BE3iF2INn5elh.E586Yvu', NULL, '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(3, 'matt.nolan', 'cedrick.maggio@example.net', '$2y$12$bYfXUfHH.2X1F.mzJ/cZv.GIhymCMV7GLDvN18F4dK8CzD57qCCyu', NULL, '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(4, 'emayer', 'omoore@example.com', '$2y$12$NFdjw9h8BgyVGmLSDyeH0.FHziDvL61N8j9rk7U/u6umIdHdHbs6G', NULL, '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(5, 'eusebio.shields', 'kschaden@example.org', '$2y$12$3JN.A7RZNUA.CpwkbO0z9ONxGTi6q1YGgQ7gHhYKIYT1rqPFYduNe', NULL, '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(6, 'bmarquardt', 'larkin.boris@example.org', '$2y$12$74bFR0fUMU7URkToipElHuvTbbtZjRsY32KxKebXoF5QGTzDmNZuu', NULL, '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(7, 'qbechtelar', 'upton.stanley@example.com', '$2y$12$E2k9W4bS0YQj.NEgpdS7vuFe2h7zbwUVCEPJmh0Sg68a.hEMzdMBO', NULL, '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(8, 'robel.alfreda', 'lemke.brandt@example.com', '$2y$12$pwnyLqL0Qto.q72/4kzvbOFzoj/MXt4HA80ZeyBmbfE87GElBhvYi', NULL, '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(9, 'murazik.carolina', 'luz57@example.net', '$2y$12$eJX7766eKbYhlBQw4xKjge2u65dR8Qip6xG0h9Rx0WfADEMb07wvW', NULL, '2025-04-18 04:27:43', '2025-04-18 04:27:43'),
+(10, 'saju', 'saju@gmail.com', '$2y$12$4x.TqwvgycoKavWe.U7Ea.mBQdHYlnsp32FuSpbuljUsj3WonDtDa', NULL, '2025-04-18 04:27:43', '2025-04-18 04:27:43');
 
 --
 -- Indexes for dumped tables
@@ -306,14 +512,6 @@ ALTER TABLE `post_tag`
   ADD KEY `post_tag_tag_id_foreign` (`tag_id`);
 
 --
--- Indexes for table `sessions`
---
-ALTER TABLE `sessions`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `sessions_user_id_index` (`user_id`),
-  ADD KEY `sessions_last_activity_index` (`last_activity`);
-
---
 -- Indexes for table `tags`
 --
 ALTER TABLE `tags`
@@ -336,19 +534,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookmarks`
 --
 ALTER TABLE `bookmarks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -366,25 +564,25 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `post_tag`
 --
 ALTER TABLE `post_tag`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

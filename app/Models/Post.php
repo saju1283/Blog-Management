@@ -2,21 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'user_id',
         'title',
         'content',
         'image',
-        'visibility',
-    ];
-
-    protected $casts = [
-        'created_at' => 'datetime:Y-m-d H:i:s',
-        'updated_at' => 'datetime:Y-m-d H:i:s',
+        'visibility'
     ];
 
     public function user()
@@ -31,11 +29,6 @@ class Post extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comment::class)->whereNull('parent_id');
-    }
-
-    public function allComments()
-    {
         return $this->hasMany(Comment::class);
     }
 
@@ -47,15 +40,5 @@ class Post extends Model
     public function bookmarks()
     {
         return $this->hasMany(Bookmark::class);
-    }
-
-    public function getImageAttribute($value)
-    {
-        return $value ? asset('storage/' . $value) : null;
-    }
-
-    public function scopePublic($query)
-    {
-        return $query->where('visibility', 'public');
     }
 }
